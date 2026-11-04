@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chúc mừng sinh nhật Sếp Bùi Anh Tuấn</title>
+<style>
+*{box-sizing:border-box} body{margin:0;min-height:100vh;overflow:hidden;font-family:Georgia,'Times New Roman',serif;color:#fff;background:radial-gradient(circle at 50% 25%,#345b83 0,#172e50 45%,#0b1830 100%);display:flex;align-items:center;justify-content:center;text-align:center}
+body:before{content:"";position:fixed;inset:0;background:radial-gradient(circle,#ffffff55 1px,transparent 2px);background-size:42px 42px;opacity:.35;animation:twinkle 4s infinite alternate}
+@keyframes twinkle{to{opacity:.12}}
+.card{position:relative;z-index:2;width:min(92%,680px);padding:38px 24px 34px;border:1px solid #ffffff55;border-radius:28px;background:#ffffff12;backdrop-filter:blur(8px);box-shadow:0 20px 70px #0006}
+h1{font-size:clamp(30px,6vw,54px);line-height:1.12;margin:8px 0;color:#ffe7a3;text-shadow:0 3px 18px #ffcf6a66}
+.name{font-family:Arial,sans-serif;font-size:clamp(23px,4vw,34px);font-weight:700;letter-spacing:2px;color:#fff;margin:14px 0 20px}
+.message{font-family:Arial,sans-serif;font-size:17px;line-height:1.8;color:#f2f5ff;max-width:540px;margin:0 auto}
+.cake{font-size:100px;margin:8px 0 12px;filter:drop-shadow(0 8px 12px #0005);animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-9px)}}
+.flowers{font-size:34px;letter-spacing:10px;margin:4px 0 18px;animation:sway 3s ease-in-out infinite}
+@keyframes sway{50%{transform:rotate(3deg) scale(1.04)}}
+.footer{margin-top:24px;color:#ffe7a3;font:italic 16px Arial,sans-serif}
+.confetti{position:fixed;top:-20px;width:9px;height:14px;border-radius:3px;animation:fall linear infinite;opacity:.8}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg)}}
+button{margin-top:22px;padding:12px 24px;border:0;border-radius:30px;background:linear-gradient(135deg,#ffe7a3,#f6b95b);color:#27344c;font-weight:bold;font-size:15px;cursor:pointer;box-shadow:0 5px 18px #0003}
+button:hover{transform:translateY(-2px)}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="flowers">🌷 🌹 💐 🌼</div>
+  <div style="font:13px Arial,sans-serif;letter-spacing:5px;color:#d8e8ff">A SPECIAL DAY TO CELEBRATE</div>
+  <h1>Happy Birthday!</h1>
+  <div class="name">SẾP BÙI ANH TUẤN</div>
+  <div class="cake">🎂</div>
+  <p class="message">Kính chúc Sếp tuổi mới thật nhiều sức khỏe, niềm vui và hạnh phúc.<br>
+  Chúc Sếp luôn thành công, vững vàng trên mọi hành trình và gặt hái thêm nhiều thành tựu mới!</p>
+  <div class="footer">Trân trọng và chúc mừng sinh nhật Sếp! ✨</div>
+  <button onclick="document.getElementById('wish').play()">🎉 Bật không khí sinh nhật</button>
+  <audio id="wish" preload="none"></audio>
+</div>
+<script>
+const colors=['#ffd166','#ef476f','#06d6a0','#a8dadc','#f7b267','#ffffff'];
+for(let i=0;i<55;i++){let e=document.createElement('i');e.className='confetti';e.style.left=Math.random()*100+'vw';e.style.animationDuration=(5+Math.random()*7)+'s';e.style.animationDelay=(-Math.random()*10)+'s';e.style.background=colors[i%colors.length];e.style.transform='rotate('+Math.random()*360+'deg)';document.body.appendChild(e)}
+document.querySelector('button').addEventListener('click',()=>{document.querySelector('.cake').animate([{transform:'scale(1)'},{transform:'scale(1.18) rotate(-5deg)'},{transform:'scale(1)'}],{duration:700});});
+</script>
+</body>
+</html>
